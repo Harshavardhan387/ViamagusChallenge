@@ -16,7 +16,7 @@ function DatePage(props) {
           <h4>To date:</h4>
           {/* {props.endDatePicker} */}
           <DatePicker format="dd-mm-yyyy hh:mm" />
-          <p>{}</p>
+          <p>Result in days:{}</p>
         </div>
       </div>
     </div>
