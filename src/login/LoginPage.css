@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+.picture{
+    position: relative;
+
+}
+.submain{
+    position: relative;
+
+}
+
+.form{
+    position: relative;
+    margin: auto;
+    margin-top: -15%;
+    width: 50%;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 7px #00000029;
+    border-radius: 6px;
+    opacity: 1;
+}
+.logo{
+
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 7px #00000029;
+    border-radius: 6px 6px 0px 0px;
+    opacity: 1;
+}
+.subForm{
+    position: relative;
+    padding: 5% 10%;
+}
+.formHead {
+    font-size: 30px;
+    color: #20B716;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+.email{
+    font-size: 16px;
+    color: #20B716;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+
+}
+.submitBtn{
+    background-color:#20B716;
+    border-radius: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    color: #FFFFFF;
+    border:none;
+    height: 50px;
+}
+.submitBtn:hover{
+    color: black;
+}
+.fp1{
+    margin-left: 15px;
+    text-align:left;
+}
+.fp1:hover{
+    font-weight: bold;
+    cursor: pointer;
+}
+.fp2{
+    text-align: right;
+    margin-top: -55px;
+}
+.fp2:hover{
+    font-weight: bold;
+    cursor: pointer;
+}
+.google{
+    text-decoration: none;
+    margin: auto;
+    height: 46px;
+    background-color: #4285F4;
+    width: 80%;
+    font-size: 16px;
+    color:#FFFFFF;
+    display: flex;
+}
+.google:hover{
+    color: black;
+}
+.googleText{
+    margin-left: 20%;
+    margin-top: 3%;
+}
+.facebook{
+    text-decoration: none;
+    margin: auto;
+    height: 46px;
+    background-color: #4285F4;
+    width: 80%;
+    font-size: 16px;
+    color:#FFFFFF;
+    display: flex;
+}
+.facebook:hover{
+    color: black;
+}
+.facebookText{
+    margin-left: 18%;
+    margin-top: 3%;
+}
+
+@media screen and (max-width:770px){
+    .googleText{
+        margin-left: 0%;
+    }
+    .facebookText{
+        margin-left: 0%;
+        margin-top: 0%;
+        text-align: center;
+    }
+}
+@media screen and (max-width:430px){
+    .form{
+        width: 70%;
+    }
+    .amazon{
+        width:35%;
+    }
+    .formHead h2{
+        font-size: 20px;
+    }
+    .email{
+        font-size: 14px;
+        margin-top: 0;
+    }
+    .emailDiv{
+        margin-top: -10px;
+    }
+    .passwordDiv{
+        margin-top: -15px;
+    }
+    input[type=email]{
+        font-size: 12px;
+    }
+    input[type=password]{
+        font-size: 12px;
+    }
+    .submitBtn{
+        height: 40px;
+        font-size: 16px;
+    }
+    .errorText{
+        font-size: 14px;
+    }
+    .googleText{
+        font-size: 11px;
+        margin-top: 6%;
+    }
+    .facebookText{
+        font-size: 11px;
+        margin-top: 6%;
+    }
+    .fp1{
+        text-align:center;
+        margin-left: 0;
+        font-size: 14px;
+    }
+    .fp2{
+        text-align: center;
+        margin-top: -15px;
+        font-size: 14px;
+    }
+
+
+}

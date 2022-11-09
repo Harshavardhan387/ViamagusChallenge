@@ -1,0 +1,29 @@
+.mainVideo{
+    margin-top: 5%;
+}
+.videoPlayer{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+.circles{
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    visibility:visible;
+
+}
+.circle1{
+    margin-top: 4%;
+
+}
+.basicCircle{
+    background-color: darkcyan;
+    border:0.1px solid black;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin:15px;
+
+}
