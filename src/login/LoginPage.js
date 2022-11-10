@@ -27,13 +27,6 @@ function LoginPage() {
     setFormValues({ ...formValues, [name]: value });
   };
 
-  //form submission handler
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setFormErrors(validate(formValues));
-    setIsSubmit(true);
-  };
-
   //form validation handler
   const validate = (values) => {
     let errors = {};
@@ -53,6 +46,13 @@ function LoginPage() {
     }
 
     return errors;
+  };
+
+  //form submission handler
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFormErrors(validate(formValues));
+    setIsSubmit(true);
   };
 
   useEffect(() => {
@@ -130,7 +130,7 @@ function LoginPage() {
               </div>
             </form>
             <div className="forgotPassword ">
-              <p className="fp1 pt-3">Forgot Password?</p>
+              <p className="fp1">Forgot Password?</p>
               <p className="fp2 pt-3 text-danger"> New user? Sign up</p>
             </div>
             <div className="or text-center">
