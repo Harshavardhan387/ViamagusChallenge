@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/ViamagusChallenge/static/css/main.89ad5e9e.css",
-    "main.js": "/ViamagusChallenge/static/js/main.c739d310.js",
+    "main.css": "/ViamagusChallenge/static/css/main.530bac00.css",
+    "main.js": "/ViamagusChallenge/static/js/main.e5cbc389.js",
     "static/js/787.5844c8ee.chunk.js": "/ViamagusChallenge/static/js/787.5844c8ee.chunk.js",
     "static/media/backimage.png": "/ViamagusChallenge/static/media/backimage.81e87c5a7c1aa4bbc951.png",
     "static/media/amazon.png": "/ViamagusChallenge/static/media/amazon.e09988ec4e8f10fe3153.png",
     "static/media/tree.png": "/ViamagusChallenge/static/media/tree.d7dc4992530dc20f4a06.png",
     "index.html": "/ViamagusChallenge/index.html",
-    "main.89ad5e9e.css.map": "/ViamagusChallenge/static/css/main.89ad5e9e.css.map",
-    "main.c739d310.js.map": "/ViamagusChallenge/static/js/main.c739d310.js.map",
+    "main.530bac00.css.map": "/ViamagusChallenge/static/css/main.530bac00.css.map",
+    "main.e5cbc389.js.map": "/ViamagusChallenge/static/js/main.e5cbc389.js.map",
     "787.5844c8ee.chunk.js.map": "/ViamagusChallenge/static/js/787.5844c8ee.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.89ad5e9e.css",
-    "static/js/main.c739d310.js"
+    "static/css/main.530bac00.css",
+    "static/js/main.e5cbc389.js"
   ]
 }
