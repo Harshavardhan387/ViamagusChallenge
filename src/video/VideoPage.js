@@ -102,10 +102,10 @@ function VideoPage() {
         <div className="circles">
           <div
             className="circle1"
-            onMouseEnter={(e) => {
+            onMouseEnter={() => {
               setVisible({ visibility: "visible" });
             }}
-            onMouseLeave={(e) => {
+            onMouseLeave={() => {
               setVisible({ visibility: "hidden" });
             }}
           >
