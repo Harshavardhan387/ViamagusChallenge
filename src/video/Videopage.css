@@ -10,10 +10,12 @@
     display: flex;
     justify-content: center;
     justify-content: space-around;
+    
 }
 .circle1{
     margin-top: 25px;
 }
+
 .basicCircle{
     background-color: darkcyan;
     border:0.1px solid black;
