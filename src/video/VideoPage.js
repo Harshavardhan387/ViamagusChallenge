@@ -84,8 +84,8 @@ function VideoPage() {
         </div>
         <div className="circles">
           <div className="circle1">
-            {urlDetails.map((url) => (
-              <Tippy content={url.tooltip}>
+            {urlDetails.map((url, index) => (
+              <Tippy content={url.tooltip} key={index}>
                 <button
                   className="basicCircle"
                   onClick={() => setUrl(url.url)}

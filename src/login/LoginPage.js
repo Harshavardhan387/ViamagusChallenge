@@ -130,7 +130,8 @@ function LoginPage() {
               </div>
             </form>
             <div className="forgotPassword ">
-              <p className="fp1">Forgot Password?</p>
+              <p className="fp1
+              ">Forgot Password?</p>
               <p className="fp2 pt-3 text-danger"> New user? Sign up</p>
             </div>
             <div className="or text-center">
