@@ -15,109 +15,120 @@ function VideoPage() {
     {
       id: 1,
       url: "https://www.youtube.com/watch?v=MDLn5-zSQQI",
-      tooltip: "Lear HTML course",
+      tooltip: "https://img.youtube.com/vi/MDLn5-zSQQI/hqdefault.jpg",
     },
     {
       id: 2,
       url: "https://www.youtube.com/watch?v=J5KxiOnIrKg",
-      tooltip: "Lear CSS course",
+      tooltip: "https://img.youtube.com/vi/J5KxiOnIrKg/hqdefault.jpg",
     },
     {
       id: 3,
       url: "https://www.youtube.com/watch?v=BH5xaVsh96w",
-      tooltip: "Lear Bootstrap for ReactJS",
+      tooltip: "https://img.youtube.com/vi/BH5xaVsh96w/hqdefault.jpg",
     },
     {
       id: 4,
       url: "https://www.youtube.com/watch?v=Xoz31I1FuiY",
-      tooltip: "Lear MaterialUI",
+      tooltip: "https://img.youtube.com/vi/Xoz31I1FuiY/hqdefault.jpg",
     },
     {
       id: 5,
       url: "https://www.youtube.com/watch?v=ubnpGkSHZ-0",
-      tooltip: "Lear ReactJS Course",
+      tooltip: "https://img.youtube.com/vi/ubnpGkSHZ-0/hqdefault.jpg",
     },
     {
       id: 6,
       url: "https://www.youtube.com/watch?v=dkbz0xuxjrk",
-      tooltip: "Lear ReactJS Libraries",
+      tooltip: "https://img.youtube.com/vi/dkbz0xuxjrk/hqdefault.jpg",
     },
     {
       id: 7,
       url: "https://www.youtube.com/watch?v=lNsnWkO9lZ8",
-      tooltip: "Lear ReactJS Components life cycle",
+      tooltip: "https://img.youtube.com/vi/lNsnWkO9lZ8/hqdefault.jpg",
     },
     {
       id: 8,
       url: "https://www.youtube.com/watch?v=UITLlBhWZPk",
-      tooltip: "Lear ReactJS Developer course",
+      tooltip: "https://img.youtube.com/vi/UITLlBhWZPk/hqdefault.jpg",
     },
     {
       id: 9,
       url: "https://www.youtube.com/watch?v=mr75zNOGFP8",
-      tooltip: "Lear ReactJS states and props",
+      tooltip: "https://img.youtube.com/vi/mr75zNOGFP8/hqdefault.jpg",
     },
     {
       id: 10,
       url: "https://www.youtube.com/watch?v=kIgboyKEEyc",
-      tooltip: "ReactJS tutorial for beginners",
+      tooltip: "https://img.youtube.com/vi/kIgboyKEEyc/hqdefault.jpg",
     },
     {
       id: 11,
       url: "https://www.youtube.com/watch?v=Xki9uDDgiFk",
-      tooltip: "React redux tutorial for beginners",
+      tooltip: "https://img.youtube.com/vi/Xki9uDDgiFk/hqdefault.jpg",
     },
     {
       id: 12,
       url: "https://www.youtube.com/watch?v=o5hPD4R6rTE",
-      tooltip: "React with redux tutorial for beginners",
+      tooltip: "https://img.youtube.com/vi/o5hPD4R6rTE/hqdefault.jpg",
     },
     {
       id: 13,
       url: "https://www.youtube.com/watch?v=DYtYyFOfpBY&t=29s",
-      tooltip: "React redux for beginners",
+      tooltip: "https://img.youtube.com/vi/DYtYyFOfpBY/hqdefault.jpg",
     },
     {
       id: 14,
       url: "https://www.youtube.com/watch?v=CVpUuw9XSjY",
-      tooltip: "Redux for beginners",
+      tooltip: "https://img.youtube.com/vi/CVpUuw9XSjY/hqdefault.jpg",
     },
     {
       id: 15,
       url: "https://www.youtube.com/watch?v=qA6oyQQTJ3I",
-      tooltip: "Redux Thunk for beginners",
+      tooltip: "https://img.youtube.com/vi/qA6oyQQTJ3I/hqdefault.jpg",
     },
     {
       id: 16,
       url: "https://www.youtube.com/watch?v=SA47gYlL2oQ",
-      tooltip: "Redux Mileware for beginners",
+      tooltip: "https://img.youtube.com/vi/SA47gYlL2oQ/hqdefault.jpg",
     },
   ];
   return (
     <div className="main">
       <div className="mainVideo ">
         <div className="videoPlayer ">
-          <ReactPlayer controls url={url} />
-        </div>
-        <div className="circles">
-          <div
-            className="circle1"
-            onMouseEnter={() => {
-              setVisible({ visibility: "visible" });
-            }}
-            onMouseLeave={() => {
-              setVisible({ visibility: "hidden" });
-            }}
-          >
-            {urlDetails.map((url, index) => (
-              <Tippy content={url.tooltip} key={index}>
-                <button
-                  style={visible}
-                  className="basicCircle"
-                  onClick={() => setUrl(url.url)}
-                ></button>
-              </Tippy>
-            ))}
+          <ReactPlayer controls url={url} className="reactPlayer"></ReactPlayer>
+          <div className="circles">
+            <div
+              className="circle1"
+              onMouseEnter={() => {
+                setVisible({ visibility: "visible" });
+              }}
+              onMouseLeave={() => {
+                setVisible({ visibility: "hidden" });
+              }}
+            >
+              {urlDetails.map((url, index) => (
+                <Tippy
+                  content={
+                    <span>
+                      <img
+                        className="thumbnailImage"
+                        src={url.tooltip}
+                        alt="thumbnail"
+                      ></img>
+                    </span>
+                  }
+                  key={index}
+                >
+                  <button
+                    style={visible}
+                    className="basicCircle"
+                    onClick={() => setUrl(url.url)}
+                  ></button>
+                </Tippy>
+              ))}
+            </div>
           </div>
         </div>
       </div>

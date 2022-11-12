@@ -6,9 +6,15 @@ import { DatePicker } from "rsuite";
 import "rsuite/dist/rsuite.min.css";
 
 function DatePage() {
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setendDate] = useState(new Date());
-  var days = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24));
+  const [startDate, setStartDate] = useState();
+  const [endDate, setEndDate] = useState();
+
+  // Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24));
+  // var days = (document.getElementById("inputDuration").value = Math.floor(
+  //   (endDate - startDate) / (1000 * 60 * 60 * 24)
+  // ));
+  // const [duration, setduration] = useState(0);
+  // var duration = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24));
 
   return (
     <div>
@@ -19,18 +25,35 @@ function DatePage() {
           <DatePicker
             format="dd-MM-yyyy hh:mm"
             id="startDate"
-            selected={startDate}
-            onChange={(date) => setStartDate(date)}
+            value={startDate}
+            onChange={(date) => {
+              setStartDate(date);
+            }}
           />
           <h4>To date:</h4>
           {/* {props.endDatePicker} */}
           <DatePicker
             format="dd-MM-yyyy hh:mm"
             id="endDate"
-            selected={endDate}
-            onChange={(date) => setendDate(date)}
+            value={endDate}
+            onChange={(date) => {
+              setEndDate(date);
+            }}
           />
-          <h4>Result in days:{days}</h4>
+          <h5>
+            Duration:
+            <input
+              type="number"
+              id="inputDuration"
+              onChange={(days) => {
+                const date = new Date();
+                date.setDate(startDate.getDate() + parseInt(days.target.value));
+                setEndDate(date);
+                // console.log(startDate);
+                // console.log(endDate);
+              }}
+            />
+          </h5>
         </div>
       </div>
     </div>
