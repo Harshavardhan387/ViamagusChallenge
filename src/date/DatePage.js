@@ -30,17 +30,7 @@ function DatePage() {
               setStartDate(date);
             }}
           />
-          <h4>To date:</h4>
-          {/* {props.endDatePicker} */}
-          <DatePicker
-            format="dd-MM-yyyy hh:mm"
-            id="endDate"
-            value={endDate}
-            onChange={(date) => {
-              setEndDate(date);
-            }}
-          />
-          <h5>
+          <h5 className="mt-4">
             Duration:
             <input
               type="number"
@@ -54,6 +44,16 @@ function DatePage() {
               }}
             />
           </h5>
+          <h4 className="mt-3">To date:</h4>
+          {/* {props.endDatePicker} */}
+          <DatePicker
+            format="dd-MM-yyyy hh:mm"
+            id="endDate"
+            value={endDate}
+            onChange={(date) => {
+              setEndDate(date);
+            }}
+          />
         </div>
       </div>
     </div>

@@ -108,7 +108,7 @@ function VideoPage() {
                 setVisible({ visibility: "hidden" });
               }}
             >
-              {urlDetails.map((url, index) => (
+              {urlDetails.map((url) => (
                 <Tippy
                   content={
                     <span>
@@ -119,7 +119,7 @@ function VideoPage() {
                       ></img>
                     </span>
                   }
-                  key={index}
+                  key={url.id}
                 >
                   <button
                     style={visible}
