@@ -97,7 +97,40 @@ function VideoPage() {
     <div className="main">
       <div className="mainVideo ">
         <div className="videoPlayer ">
-          <ReactPlayer controls url={url} className="reactPlayer"></ReactPlayer>
+          <ReactPlayer controls url={url} className="reactPlayer">
+            <div className="circles">
+              <div
+                className="circle1"
+                onMouseEnter={() => {
+                  setVisible({ visibility: "visible" });
+                }}
+                onMouseLeave={() => {
+                  setVisible({ visibility: "hidden" });
+                }}
+              >
+                {urlDetails.map((url) => (
+                  <Tippy
+                    content={
+                      <span>
+                        <img
+                          className="thumbnailImage"
+                          src={url.tooltip}
+                          alt="thumbnail"
+                        ></img>
+                      </span>
+                    }
+                    key={url.id}
+                  >
+                    <button
+                      style={visible}
+                      className="basicCircle"
+                      onClick={() => setUrl(url.url)}
+                    ></button>
+                  </Tippy>
+                ))}
+              </div>
+            </div>
+          </ReactPlayer>
           <div className="circles">
             <div
               className="circle1"

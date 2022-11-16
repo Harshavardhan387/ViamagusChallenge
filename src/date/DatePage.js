@@ -6,15 +6,29 @@ import { DatePicker } from "rsuite";
 import "rsuite/dist/rsuite.min.css";
 
 function DatePage() {
-  const [startDate, setStartDate] = useState();
+  const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState();
 
-  // Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24));
-  // var days = (document.getElementById("inputDuration").value = Math.floor(
-  //   (endDate - startDate) / (1000 * 60 * 60 * 24)
-  // ));
-  // const [duration, setduration] = useState(0);
-  // var duration = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24));
+  function calculateEndDate(date) {
+    const newDate = new Date(date);
+    var duration = document.getElementById("inputDuration");
+    if (date) {
+      if (parseInt(duration.value)) {
+        for (var i = 0; i < parseInt(duration.value); ) {
+          if (newDate.getDay() !== 0 && newDate.getDay() !== 6) {
+            i++;
+          }
+          newDate.setDate(newDate.getDate() + 1);
+        }
+        setEndDate(newDate);
+      } else {
+        setEndDate();
+      }
+    } else {
+      setEndDate();
+      duration.value = 0;
+    }
+  }
 
   return (
     <div>
@@ -28,20 +42,16 @@ function DatePage() {
             value={startDate}
             onChange={(date) => {
               setStartDate(date);
+              calculateEndDate(date);
             }}
           />
           <h5 className="mt-4">
             Duration:
             <input
+              className="text-center"
               type="number"
               id="inputDuration"
-              onChange={(days) => {
-                const date = new Date();
-                date.setDate(startDate.getDate() + parseInt(days.target.value));
-                setEndDate(date);
-                // console.log(startDate);
-                // console.log(endDate);
-              }}
+              onChange={() => calculateEndDate(startDate)}
             />
           </h5>
           <h4 className="mt-3">To date:</h4>
@@ -61,3 +71,20 @@ function DatePage() {
 }
 
 export default DatePage;
+
+// function calculateEndDate(date) {
+//   const newDate = new Date();
+//   var duration = document.getElementById("inputDuration");
+//   if (date) {
+
+//     if (parseInt(duration.value)) {
+//       newDate.setDate(date.getDate() + parseInt(duration.value));
+//       setEndDate(newDate);
+//     } else {
+//       setEndDate();
+//     }
+//   } else {
+//     setEndDate();
+//     duration.value = 0;
+//   }
+// }

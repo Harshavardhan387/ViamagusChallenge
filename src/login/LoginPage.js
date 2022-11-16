@@ -30,19 +30,24 @@ function LoginPage() {
   //form validation handler
   const validate = (values) => {
     let errors = {};
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{8,16}$/i;
+    const regex = /([a-zA-Z0-9]+)([.{1}])?([a-zA-Z0-9]+)@gmail([.])com/g;
+    let minusCircle = <i className="fa fa-minus-circle"></i>;
 
     if (!values.email) {
-      errors.email = "The Email field is required";
+      errors.email = <p>{minusCircle} The Email field is required</p>;
     } else if (!regex.test(values.email)) {
-      errors.email = "This is not a valid email format!";
+      errors.email = <p>{minusCircle} This is not a valid email format!</p>;
     }
     if (!values.password) {
-      errors.password = "Password is required";
+      errors.password = <p>{minusCircle} Password is required</p>;
     } else if (values.password.length < 4) {
-      errors.password = "Please enter minimum of 4 characters";
+      errors.password = (
+        <p>{minusCircle} Please enter minimum of 4 characters</p>
+      );
     } else if (values.password.length > 10) {
-      errors.password = "Please enter maximum of 10 characters only!";
+      errors.password = (
+        <p>{minusCircle} Please enter maximum of 10 characters only!</p>
+      );
     }
 
     return errors;
@@ -67,84 +72,104 @@ function LoginPage() {
     <div className="main">
       <div className="submain">
         <div className="picture">
-          <img src={backimage} alt="backgroundImage" width="100%" />
+          <img
+            className="backgroundImage"
+            src={backimage}
+            alt="backgroundImage"
+            width="100%"
+            loading="lazy"
+          />
         </div>
         <div className="form">
           <div className="logo text-center">
             <img
-              className="mt-3 amazon"
+              className="amazon"
               src={amazon}
               alt="Amazon Logo"
               width="18%"
             />
           </div>
-          <div className="formHead text-center mt-4">
-            <h2>Login</h2>
+          <div className="formHead text-center mt-2 mb-3">
+            <p>Login</p>
           </div>
           <div className="subForm">
-            <div className="treeimage text-center ml-2">
-              <img src={tree} alt="TreePicture" width="100%" />
+            <div className="text-center ml-2">
+              <img
+                className="treeimage"
+                src={tree}
+                alt="TreePicture"
+                width="100%"
+              />
             </div>
-            {Object.keys(formErrors).length === 0 && isSubmit && (
-              <span>Form submitted successfully</span>
-            )}
             <form className="container" onSubmit={handleSubmit} noValidate>
               <div className="form-group">
                 <div className="emailDiv">
-                  <label className="text-align-start email mt-4 mb-1">
+                  {/* <label className="text-align-start email mt-4 mb-1">
                     Email
-                  </label>
+                  </label> */}
                   <input
                     type="email"
-                    className="col-2 mb-2 form-control emaiInput"
-                    placeholder="Enter your email here"
+                    className="emaiInput"
+                    // placeholder="Enter your email here"
+                    placeholder="Email"
                     name="email"
                     value={formValues.email}
                     onChange={handleChange}
                   />
-                  <p className="text-danger errorText">
+                  <p className="errorText">
                     {formErrors.email && <span>{formErrors.email}</span>}
                   </p>
                 </div>
                 <div className="passwordDiv">
-                  <label className="text-align-start email mt-4 mb-1">
+                  {/* <label className="text-align-start email mt-4 mb-1">
                     Password
-                  </label>
+                  </label> */}
                   <input
                     type="password"
-                    className="mb-2 form-control emaiInput"
-                    placeholder="Enter your password here"
+                    className="emaiInput"
+                    // placeholder="Enter your password here"
+                    placeholder="Password"
                     name="password"
                     value={formValues.password}
                     onChange={handleChange}
                   />
-                  <p className="text-danger errorText">
+                  <p className="errorText">
                     {formErrors.password && <span>{formErrors.password}</span>}
                   </p>
                 </div>
                 <div className="d-grid gap-2 mx-auto">
-                  <button type="submit" className="m-3 submitBtn">
+                  <button
+                    type="submit"
+                    onClick={submit}
+                    className="mt-3 mb-2 submitBtn"
+                  >
                     Sign In
                   </button>
+                </div>
+                <div className="submitText">
+                  {Object.keys(formErrors).length === 0 && isSubmit && (
+                    <p className="text-center fw-bold text-success ">
+                      Form submitted successfully..!
+                    </p>
+                  )}
                 </div>
               </div>
             </form>
             <div className="forgotPassword ">
-              <p className="fp1
-              ">Forgot Password?</p>
-              <p className="fp2 pt-3 text-danger"> New user? Sign up</p>
+              <p className="fp1">Forgot Password?</p>
+              <p className="fp2"> New user? Sign up</p>
             </div>
-            <div className="or text-center">
+            <div className="or text-center m-2">
               <p>or</p>
             </div>
-            <div className="socialMedia">
+            <div className="socialMedia ">
               <a href="*" className="google">
                 <img
                   src={google}
                   alt="Google Logo"
                   className="m-2 googleLogo"
                 />
-                <p className="googleText">CONTINUE WITH GOOGLE</p>
+                <p className="googleText ">CONTINUE WITH GOOGLE</p>
               </a>
               <a href="*" className="facebook mt-4">
                 <img
@@ -163,3 +188,11 @@ function LoginPage() {
 }
 
 export default LoginPage;
+// get fromDate; 16 Nov, 2022
+//get the duration; 3
+// fromDate.getDay(); 3
+//if(formDate == >0 and  <6){
+//   finalDate.setDate(fromDate.getDate() + parseInt(duration.value)); 19 Nov, 2022
+// }
+
+//finaDate(); 21 Nov, 2022

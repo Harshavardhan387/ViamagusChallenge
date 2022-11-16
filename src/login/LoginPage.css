@@ -2,62 +2,100 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Josefin Sans', Regular Roman;
   }
-
 .picture{
     position: relative;
-
 }
 .submain{
     position: relative;
-
 }
-
 .form{
     position: relative;
     margin: auto;
     margin-top: -15%;
-    width: 50%;
+    padding-bottom: 3%;
+    width: 577px;
+    height: auto;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 7px #00000029;
     border-radius: 6px;
     opacity: 1;
 }
-.logo{
 
+.logo{
+    height: 58px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 0px 7px #00000029;
     border-radius: 6px 6px 0px 0px;
     opacity: 1;
 }
+.amazon{
+    padding-top: 1%;
+}
 .subForm{
     position: relative;
-    padding: 5% 10%;
+    width: 385px;
+    margin: 0 auto;
 }
 .formHead {
-    font-size: 30px;
+    font-size: 29px;
     color: #20B716;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
 }
-.email{
+.treeimage{
+    width: 100%;
+    height: auto;
+}
+input {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom: 2px solid #E2E8F0;
+}
+::placeholder{
+    font-size: 16px;
+    color: #20B716;
+    opacity: 1;
+}
+.emaiInput{
+    width: 100%;
+    height: 25px;
+    margin: 5% 0;
+}
+input:focus {
+    outline:none;
+}
+.errorText{
+    color: #EE2D6E;
+    font-size: 13px;
+    margin-top: -3%;
+    position: relative;
+    height: 10px;
+}
+/* .email{
     font-size: 16px;
     color: #20B716;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 500;
 
-}
+} */
 .submitBtn{
     background-color:#20B716;
     border-radius: 40px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 20px;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    font-size: 19px;
     color: #FFFFFF;
     border:none;
-    height: 50px;
+    height: 49px;
 }
 .submitBtn:hover{
     color: black;
+}
+.submitText{
+    position: relative;
+    height: 15px;
+    margin-bottom: 12px;
 }
 .fp1{
     margin-left: 15px;
@@ -69,7 +107,9 @@
 }
 .fp2{
     text-align: right;
-    margin-top: -35px;
+    margin-right: 15px;
+    margin-top: -22px;
+    color: #EE2D6E;;
 }
 .fp2:hover{
     font-weight: bold;
@@ -77,11 +117,11 @@
 }
 .google{
     text-decoration: none;
-    margin: auto;
+    margin: 0 auto;
     height: 46px;
     background-color: #4285F4;
-    width: 80%;
-    font-size: 16px;
+    width: 95%;
+    font-size: 14px;
     color:#FFFFFF;
     display: flex;
 }
@@ -90,15 +130,15 @@
 }
 .googleText{
     margin-left: 20%;
-    margin-top: 3%;
+    margin-top: 4%;
 }
 .facebook{
     text-decoration: none;
-    margin: auto;
+    margin: 0 auto;
     height: 46px;
     background-color: #4285F4;
-    width: 80%;
-    font-size: 16px;
+    width: 95%;
+    font-size: 14px;
     color:#FFFFFF;
     display: flex;
 }
@@ -107,10 +147,16 @@
 }
 .facebookText{
     margin-left: 18%;
-    margin-top: 3%;
+    margin-top: 4%;
 }
 
 @media screen and (max-width:770px){
+    .form{
+        margin-top: -15%;
+        margin-left: 20%;
+        width: 480px;
+        height: auto;
+    }
     .googleText{
         margin-left: 0%;
     }
@@ -119,47 +165,46 @@
         margin-top: 0%;
         text-align: center;
     }
+    .googleText{
+        margin-top: 4%;
+        margin-left: 18%;
+    }
+    .facebookText{
+        margin-top: 4%;
+        margin-left: 18%;
+    }
 }
 @media screen and (max-width:430px){
     .form{
-        width: 70%;
+        width: 320px;
+        margin-left: 10%;
+    }
+    .logo{
+        height: 40px;
     }
     .amazon{
-        width:35%;
+        width:30%;
     }
-    .formHead h2{
-        font-size: 20px;
+    .formHead{
+        font-size: 24px;
+    }
+    .subForm{
+        position: relative;
+        width: 275px;
+        margin: 0 auto;
     }
     .email{
         font-size: 14px;
-        margin-top: 0;
     }
-    .emailDiv{
-        margin-top: -10px;
-    }
-    .passwordDiv{
-        margin-top: -15px;
-    }
-    input[type=email]{
-        font-size: 12px;
-    }
-    input[type=password]{
+    ::placeholder{
         font-size: 12px;
     }
     .submitBtn{
-        height: 40px;
-        font-size: 16px;
-    }
-    .errorText{
+        height: 30px;
         font-size: 14px;
     }
-    .googleText{
-        font-size: 11px;
-        margin-top: 6%;
-    }
-    .facebookText{
-        font-size: 11px;
-        margin-top: 6%;
+    .errorText{
+        font-size: 10px;
     }
     .fp1{
         text-align:center;
@@ -168,9 +213,34 @@
     }
     .fp2{
         text-align: center;
-        margin-top: -15px;
-        font-size: 14px;
+        margin-top: 10px;
+        margin-right: 0;
     }
-
-
+    .google{
+        height: 40px;
+        width: 90%;
+        text-align: center;
+    }
+    .facebook{
+        height: 40px;
+        width: 90%;
+        text-align: center;
+    }
+    .googleText{
+        font-size: 10px;
+        margin-left: 12%;
+        margin-top: 5%;
+    }
+    .facebookText{
+        font-size: 10px;
+        margin-left: 12%;
+        margin-top: 5%;
+    }
+}
+@media screen and (max-width:321px){
+    .form{
+        width: 320px;
+        margin-top: -15%;
+        margin-left: 0%;
+    }
 }
